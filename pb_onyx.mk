@@ -10,13 +10,13 @@ DEVICE_PATH := device/xiaomi/sm8750
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := dada
+PRODUCT_RELEASE_NAME := onyx
 
 ## Device identifier
 PRODUCT_DEVICE := sm8750
-PRODUCT_NAME := twrp_dada
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Xiaomi 15
+PRODUCT_NAME := pb_onyx
+PRODUCT_BRAND := POCO
+PRODUCT_MODEL := POCO F7
 PRODUCT_MANUFACTURER := Xiaomi
 
 # Assert
@@ -24,8 +24,9 @@ TARGET_OTA_ASSERT_DEVICE := $(PRODUCT_RELEASE_NAME)
 
 # Theme
 TW_STATUS_ICONS_ALIGN := center
-TW_Y_OFFSET := 111
-TW_H_OFFSET := -111
+TW_Y_OFFSET := 116
+TW_H_OFFSET := -116
 
-# SPR
-PRODUCT_PROPERTY_OVERRIDES += vendor.display.enable_spr=1
+
+# Inherit some common TWRP stuff.
+$(call inherit-product, vendor/pb/config/common.mk)
